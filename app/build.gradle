@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.chihab_eddine98.eatit"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -29,7 +29,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:17.0.0'
     implementation 'com.google.firebase:firebase-database:17.0.0'
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
-    implementation 'info.hoang8f:fbutton:1.0.5'
+    implementation 'com.github.jd-alexander:android-flat-button:1.1'
 }
 
 apply plugin: 'com.google.gms.google-services'

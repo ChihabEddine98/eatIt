@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:background="@drawable/bg_login">
+
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/noirClair">
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_weight="1"
+                android:id="@+id/edt_nom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:hint="Nom"
+                android:text=""
+                android:inputType="text"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:textSize="34sp"
+                app:met_baseColor="@android:color/white"
+                app:met_floatingLabel="highlight"
+                app:met_maxCharacters="10"
+                app:met_primaryColor="@android:color/white"
+                app:met_singleLineEllipsis="true"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/edt_prenom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:hint="Prénoms"
+                android:layout_weight="1"
+                android:text=""
+                android:inputType="text"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:textSize="34sp"
+                app:met_baseColor="@android:color/white"
+                app:met_floatingLabel="highlight"
+                app:met_maxCharacters="10"
+                app:met_primaryColor="@android:color/white"
+                app:met_singleLineEllipsis="true"/>
+        </LinearLayout>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edt_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            android:textColorHint="@color/colorGrey"
+            android:textColor="@android:color/white"
+            android:textSize="34sp"
+            android:inputType="phone"
+            android:layout_margin="25dp"
+            app:met_baseColor="@android:color/white"
+            app:met_floatingLabel="highlight"
+            app:met_maxCharacters="10"
+            app:met_primaryColor="@android:color/white"
+            app:met_singleLineEllipsis="true"
+            />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edt_mdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:hint="Password"
+            android:text=""
+            android:inputType="textPassword"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:textSize="34sp"
+            app:met_baseColor="@android:color/white"
+            app:met_floatingLabel="highlight"
+            app:met_maxCharacters="10"
+            app:met_primaryColor="@android:color/white"
+            app:met_singleLineEllipsis="true"/>
+
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:weightSum="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <info.hoang8f.widget.FButton
+                android:id="@+id/btnRegister"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="30dp"
+                android:text="Register"
+                app:fButtonColor="@color/colorPrimary"
+                android:textColor="@android:color/white"
+                android:shadowColor="@android:color/black"
+                app:shadowEnabled="true"
+                app:cornerRadius="5dp"
+
+                />
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

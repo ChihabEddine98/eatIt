@@ -22,8 +22,62 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:src="@drawable/logo_eat_it" />
-        
-        
+
+        <TextView
+            android:textSize="20dp"
+            android:gravity="center"
+            android:id="@+id/txtWelcome"
+            android:text="@string/txtWelcome"
+            android:textColor="@android:color/white"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/btnRegister"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:text="Register"
+            app:fButtonColor="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:shadowColor="@android:color/black"
+            app:shadowEnabled="true"
+            app:cornerRadius="5dp"
+
+            />
+
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/btnConnect"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:text="Connect"
+            app:fButtonColor="@color/colorAccent"
+            android:textColor="@android:color/white"
+            android:shadowColor="@android:color/black"
+            app:shadowEnabled="true"
+            app:cornerRadius="5dp"
+
+            />
+
+
+
+
     </LinearLayout>
 
 

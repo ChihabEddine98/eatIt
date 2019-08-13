@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EatIt</string>
+    <string name="txtWelcome">Our mystery shoppers also let you know how clean your restaurant is, how the restroom smelled and if it is a good value?</string>
 </resources>
