@@ -1,0 +1,22 @@
+{
+  "User": {
+    "123": {
+      "nom": "Benamara",
+      "prenom": "Chihab Eddine",
+      "dateDeNaissance": "12/09/1998",
+      "mdp": "123"
+    },
+    "456": {
+      "nom": "Benamara",
+      "prenom": "Med Amine",
+      "dateDeNaissance": "06/10/2005",
+      "mdp": "123"
+    },
+    "789": {
+      "nom": "Bourada",
+      "prenom": "Amina",
+      "dateDeNaissance": "15/06/1971",
+      "mdp": "123"
+    }
+  }
+}
