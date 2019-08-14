@@ -1,5 +1,6 @@
 package com.chihab_eddine98.eatit;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.chihab_eddine98.eatit.common.Common;
@@ -39,8 +40,11 @@ public class Home extends AppCompatActivity
     FirebaseDatabase bdd;
     DatabaseReference table_category;
     TextView txtPrenom;
+
+    //Recycler View
     RecyclerView recycler_category;
     RecyclerView.LayoutManager layoutManager;
+    FirebaseRecyclerAdapter<Category, CategoryVH> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +105,7 @@ public class Home extends AppCompatActivity
     private void loadCategories() {
 
 
-        FirebaseRecyclerAdapter<Category, CategoryVH> adapter=new FirebaseRecyclerAdapter<Category, CategoryVH>(Category.class,R.layout.category_item,CategoryVH.class,table_category) {
+        adapter=new FirebaseRecyclerAdapter<Category, CategoryVH>(Category.class,R.layout.category_item,CategoryVH.class,table_category) {
             @Override
             protected void populateViewHolder(CategoryVH categoryVH, Category category, int i) {
 
@@ -113,8 +117,11 @@ public class Home extends AppCompatActivity
                 categoryVH.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Snackbar.make(view, "Clicked on : "+clickItem.getNom(), Snackbar.LENGTH_LONG)
-                                .setAction("Action", null).show();
+                        Intent foodActivity=new Intent(Home.this,FoodList.class);
+                        foodActivity.putExtra("categoryId",adapter.getRef(position).getKey());
+
+                        startActivity(foodActivity);
+
                     }
                 });
             }
