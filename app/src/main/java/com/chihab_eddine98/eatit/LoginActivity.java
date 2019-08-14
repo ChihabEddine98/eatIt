@@ -3,12 +3,14 @@ package com.chihab_eddine98.eatit;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.chihab_eddine98.eatit.common.Common;
 import com.chihab_eddine98.eatit.model.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -55,7 +57,10 @@ public class LoginActivity extends AppCompatActivity {
 
                             if (user.getMdp().equals(edt_mdp.getText().toString()))
                             {
-                                Toast.makeText(LoginActivity.this," Success !",Toast.LENGTH_SHORT).show();
+                                Intent homeActivity=new Intent(LoginActivity.this,Home.class);
+                                Common.currentUser=user;
+                                startActivity(homeActivity);
+
                             }
                             else
                             {

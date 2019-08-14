@@ -22,4 +22,16 @@ public class User
     public String getMdp() {
         return mdp;
     }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public String getDateDeNaissance() {
+        return dateDeNaissance;
+    }
 }

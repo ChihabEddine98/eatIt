@@ -18,5 +18,36 @@
       "dateDeNaissance": "15/06/1971",
       "mdp": "123"
     }
+  },
+
+  "Category": {
+    "1": {
+      "nom": "Pizzas",
+      "imgUrl": "https://fac.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2FFAC.2Fvar.2Ffemmeactuelle.2Fstorage.2Fimages.2Fminceur.2Frecettes-minceur.2Fminceur-recettes-pizzas-light-qui-ne-font-pas-grossir-51326.2F15008530-1-fre-FR.2Fminceur-10-recettes-de-pizzas-light-qui-ne-font-pas-grossir.2Ejpg/737x415/quality/90/crop-from/center/minceur-10-recettes-de-pizzas-light-qui-ne-font-pas-grossir."
+    },
+    "2": {
+      "nom": "Tacos",
+      "imgUrl": "https://u.tfstatic.com/restaurant_photos/053/450053/169/612/tacos-ben-plato-6d1f8.jpg"
+    },
+    "3": {
+      "nom": "Sandwich",
+      "imgUrl": "https://assets.afcdn.com/recipe/20160928/21224_w1024h768c1cx2128cy1416.jpg"
+    },
+    "4": {
+      "nom": "Soupes",
+      "imgUrl": "http://storenotrefamilleprod.blob.core.windows.net/images/cms/recette/12369/12369_large.jpg"
+    },
+    "5": {
+      "nom": "Traditionnel",
+      "imgUrl": "https://www.welovebuzz.com/wp-content/uploads/2015/01/couscous-marocain.jpg"
+    },
+    "6": {
+      "nom": "Boissons",
+      "imgUrl": "https://assets.afcdn.com/recipe/20160310/44723_w1024h768c1cx2015cy1500.jpg"
+    },
+    "7": {
+      "nom": "Gateaux",
+      "imgUrl": "https://www.auxdelicesdupalais.net/wp-content/uploads/2017/05/DSC07908.jpg"
+    }
   }
 }
