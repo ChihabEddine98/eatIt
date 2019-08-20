@@ -4,12 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.chihab_eddine98.eatit.Database.Database;
 import com.chihab_eddine98.eatit.model.Food;
+import com.chihab_eddine98.eatit.model.Order;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
@@ -27,7 +31,6 @@ public class FoodDetail extends AppCompatActivity {
     ImageView food_img;
 
     CollapsingToolbarLayout collapsingToolbarLayout;
-    Toolbar toolbar;
     FloatingActionButton btnCart;
     ElegantNumberButton btnQte;
 
@@ -35,6 +38,8 @@ public class FoodDetail extends AppCompatActivity {
 
     FirebaseDatabase bdd;
     DatabaseReference table_food;
+
+    Food currentFood;
 
 
     @Override
@@ -49,6 +54,24 @@ public class FoodDetail extends AppCompatActivity {
         table_food=bdd.getReference("Food");
 
         // Intialiser les components graphiques
+
+        btnCart=findViewById(R.id.btnCart);
+        btnQte=findViewById(R.id.btnQte);
+
+        btnCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Order order=new Order(foodId,
+                        currentFood.getNom(),
+                        btnQte.getNumber(),
+                        currentFood.getPrix(),
+                        currentFood.getReduction());
+
+                new Database(getBaseContext()).addToCart(order);
+
+                Toast.makeText(getBaseContext()," Ajouté au panier !",Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
         food_nom=findViewById(R.id.food_nom);
@@ -78,17 +101,17 @@ public class FoodDetail extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                Food food=dataSnapshot.getValue(Food.class);
+                currentFood=dataSnapshot.getValue(Food.class);
                 // Binding information image,nom,prix,description
 
                 // Image
-                Picasso.with(getBaseContext()).load(food.getImgUrl())
+                Picasso.with(getBaseContext()).load(currentFood.getImgUrl())
                         .into(food_img);
 
-                food_nom.setText(food.getNom());
-                food_prix.setText(food.getPrix());
-                food_description.setText(food.getDescription());
-                collapsingToolbarLayout.setTitle("Pizza/"+food.getNom());
+                food_nom.setText(currentFood.getNom());
+                food_prix.setText(currentFood.getPrix());
+                food_description.setText(currentFood.getDescription());
+                collapsingToolbarLayout.setTitle("Pizza/"+currentFood.getNom());
 
 
 

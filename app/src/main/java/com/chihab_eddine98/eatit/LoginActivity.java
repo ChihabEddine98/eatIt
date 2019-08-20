@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (dataSnapshot.child(edt_phone.getText().toString()).exists())
                         {
                             User user=dataSnapshot.child(edt_phone.getText().toString()).getValue(User.class);
-
+                            user.setPhone(edt_phone.getText().toString());
 
                             if (user.getMdp().equals(edt_mdp.getText().toString()))
                             {

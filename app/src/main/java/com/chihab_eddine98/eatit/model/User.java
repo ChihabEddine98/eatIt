@@ -7,6 +7,9 @@ public class User
     private String prenom;
     private String dateDeNaissance;
     private String mdp;
+    // Ajouté pour le besoin
+    private String phone;
+
 
 
     public User(String nom, String prenom, String dateDeNaissance, String mdp) {
@@ -33,5 +36,14 @@ public class User
 
     public String getDateDeNaissance() {
         return dateDeNaissance;
+    }
+
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
