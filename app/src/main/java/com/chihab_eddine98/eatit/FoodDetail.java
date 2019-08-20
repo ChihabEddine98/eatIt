@@ -8,12 +8,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.chihab_eddine98.eatit.Database.Database;
 import com.chihab_eddine98.eatit.model.Food;
-import com.chihab_eddine98.eatit.model.Order;
+import com.chihab_eddine98.eatit.model.FoodOrder;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
@@ -61,7 +60,7 @@ public class FoodDetail extends AppCompatActivity {
         btnCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Order order=new Order(foodId,
+                FoodOrder order=new FoodOrder(foodId,
                         currentFood.getNom(),
                         btnQte.getNumber(),
                         currentFood.getPrix(),
@@ -109,7 +108,7 @@ public class FoodDetail extends AppCompatActivity {
                         .into(food_img);
 
                 food_nom.setText(currentFood.getNom());
-                food_prix.setText(currentFood.getPrix());
+                food_prix.setText(currentFood.getPrix()+" €");
                 food_description.setText(currentFood.getDescription());
                 collapsingToolbarLayout.setTitle("Pizza/"+currentFood.getNom());
 

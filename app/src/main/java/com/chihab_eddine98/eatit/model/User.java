@@ -1,5 +1,7 @@
 package com.chihab_eddine98.eatit.model;
 
+import android.text.method.TextKeyListener;
+
 public class User
 {
 
@@ -34,6 +36,15 @@ public class User
         return prenom;
     }
 
+    public String getNomComplet() {
+        return affiche(nom)+" "+affiche(prenom);
+    }
+
+    public String affiche(String word)
+    {
+        return word.substring(0,1).toUpperCase()+word.substring(1).toLowerCase();
+
+    }
     public String getDateDeNaissance() {
         return dateDeNaissance;
     }
@@ -46,4 +57,6 @@ public class User
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+
 }

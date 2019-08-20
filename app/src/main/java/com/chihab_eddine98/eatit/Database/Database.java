@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 
-import com.chihab_eddine98.eatit.model.Order;
+import com.chihab_eddine98.eatit.model.FoodOrder;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class Database extends SQLiteAssetHelper {
 
 
 
-    public List<Order> getCart()
+    public List<FoodOrder> getCart()
     {
 
         SQLiteDatabase db=getReadableDatabase();
@@ -35,12 +35,12 @@ public class Database extends SQLiteAssetHelper {
         qb.setTables(sqlTable);
 
         Cursor cursor=qb.query(db,sqlSelect,null,null,null,null,null);
-        List<Order> result=new ArrayList<>();
+        List<FoodOrder> result=new ArrayList<>();
 
         if (cursor.moveToFirst())
         {
             do {
-                Order order=new Order(cursor.getString(cursor.getColumnIndex("foodId")),
+                FoodOrder order=new FoodOrder(cursor.getString(cursor.getColumnIndex("foodId")),
                                       cursor.getString(cursor.getColumnIndex("foodNom")),
                                       cursor.getString(cursor.getColumnIndex("qte")),
                                       cursor.getString(cursor.getColumnIndex("prix")),
@@ -56,7 +56,7 @@ public class Database extends SQLiteAssetHelper {
 
     }
 
-    public void addToCart(Order order)
+    public void addToCart(FoodOrder order)
     {
         SQLiteDatabase db=getReadableDatabase();
 
@@ -64,6 +64,14 @@ public class Database extends SQLiteAssetHelper {
                 ,order.getFoodId(),order.getFoodName(),order.getQte(),order.getPrix(),order.getReduction());
 
 
+        db.execSQL(query);
+
+    }
+
+    public void cleanCart()
+    {
+        SQLiteDatabase db=getReadableDatabase();
+        String query=String.format("DELETE FROM OrderFood;");
         db.execSQL(query);
 
     }

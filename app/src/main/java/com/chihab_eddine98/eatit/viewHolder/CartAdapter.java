@@ -1,7 +1,6 @@
 package com.chihab_eddine98.eatit.viewHolder;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.chihab_eddine98.eatit.R;
 import com.chihab_eddine98.eatit.interfaces.ItemClickListener;
-import com.chihab_eddine98.eatit.model.Order;
+import com.chihab_eddine98.eatit.model.FoodOrder;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -56,11 +55,11 @@ import java.util.Locale;
 public class CartAdapter extends RecyclerView.Adapter<CartVH>
 {
 
-    private List<Order> orderList=new ArrayList<>();
+    private List<FoodOrder> orderList=new ArrayList<>();
     private Context context;
 
 
-    public CartAdapter(List<Order> orderList, Context context) {
+    public CartAdapter(List<FoodOrder> orderList, Context context) {
         this.orderList = orderList;
         this.context = context;
     }
@@ -83,10 +82,10 @@ public class CartAdapter extends RecyclerView.Adapter<CartVH>
 
         holder.cart_item_qte.setImageDrawable(drawable);
 
-        Locale locale=new Locale("fr","FRA");
+        Locale locale=new Locale("fr","FR");
         NumberFormat fmt=NumberFormat.getCurrencyInstance(locale);
 
-        int prix=(Integer.parseInt(orderList.get(position).getPrix()))*(Integer.parseInt(orderList.get(position).getQte()));
+        double prix=(Double.parseDouble(orderList.get(position).getPrix()))*(Double.parseDouble(orderList.get(position).getQte()));
         holder.cart_item_prix.setText(fmt.format(prix));
 
         holder.cart_item_nom.setText(orderList.get(position).getFoodName());

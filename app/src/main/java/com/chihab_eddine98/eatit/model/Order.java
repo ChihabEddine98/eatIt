@@ -1,63 +1,76 @@
 package com.chihab_eddine98.eatit.model;
 
-public class Order {
+import java.util.List;
 
+public class Order
+{
+    private String phone;
+    private String nom;
+    private String adresse;
+    private String total;
+    private List<FoodOrder> foods;
+    private String status;
 
-    private String foodId;
-    private String foodName;
-    private String qte;
-    private String prix;
-    private String reduction;
+    // Status : 0:En préparation  1:En route  2:Livrée  3:Remboursement
 
     public Order() {
     }
 
-    public Order(String foodId, String foodName, String qte, String prix, String reduction) {
-        this.foodId = foodId;
-        this.foodName = foodName;
-        this.qte = qte;
-        this.prix = prix;
-        this.reduction = reduction;
+    public Order(String phone, String nom, String adresse, String total, List<FoodOrder> foods) {
+        this.phone = phone;
+        this.nom = nom;
+        this.adresse = adresse;
+        this.total = total;
+        this.foods = foods;
+        status="0";
     }
 
 
-    public String getFoodId() {
-        return foodId;
+    public String getStatus() {
+        return status;
     }
 
-    public void setFoodId(String foodId) {
-        this.foodId = foodId;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public String getFoodName() {
-        return foodName;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setFoodName(String foodName) {
-        this.foodName = foodName;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getQte() {
-        return qte;
+    public String getNom() {
+        return nom;
     }
 
-    public void setQte(String qte) {
-        this.qte = qte;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-    public String getPrix() {
-        return prix;
+    public String getAdresse() {
+        return adresse;
     }
 
-    public void setPrix(String prix) {
-        this.prix = prix;
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
     }
 
-    public String getReduction() {
-        return reduction;
+    public String getTotal() {
+        return total;
     }
 
-    public void setReduction(String reduction) {
-        this.reduction = reduction;
+    public void setTotal(String total) {
+        this.total = total;
+    }
+
+    public List<FoodOrder> getFoods() {
+        return foods;
+    }
+
+    public void setFoods(List<FoodOrder> foods) {
+        this.foods = foods;
     }
 }

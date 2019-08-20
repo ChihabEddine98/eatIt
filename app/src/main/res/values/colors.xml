@@ -6,6 +6,8 @@
     <color name="colorAccent">#D81B60</color>
     <color name="noirClair">#B74C2F37</color>
     <color name="overlayBg">#808C7379</color>
+    <color name="btn_color_clair">#F50057</color>
+    <color name="bg_color_clair">#8B143D42</color>
 
 
 </resources>
