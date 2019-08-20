@@ -175,11 +175,24 @@ public class Home extends AppCompatActivity
             // Handle the camera action
         } else if (id == R.id.nav_cart) {
 
+            Intent cartIntent=new Intent(Home.this,Cart.class);
+            startActivity(cartIntent);
+
         } else if (id == R.id.nav_orders) {
+
+            Intent mesCommandesIntent=new Intent(Home.this,MesCommandes.class);
+            startActivity(mesCommandesIntent);
 
         } else if (id == R.id.nav_settings) {
 
         } else if (id == R.id.nav_logout) {
+
+            Intent loginIntent=new Intent(Home.this,LoginActivity.class);
+
+            loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(loginIntent);
+
+
 
         }
 

@@ -24,6 +24,7 @@
             android:textColorHint="@color/colorGrey"
             android:textColor="@android:color/white"
             android:textSize="34sp"
+            android:text="123"
             android:inputType="phone"
             android:layout_margin="25dp"
             app:met_baseColor="@android:color/white"
@@ -39,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="25dp"
             android:hint="Password"
-            android:text=""
+            android:text="123"
             android:inputType="textPassword"
             android:textColor="@android:color/white"
             android:textColorHint="@android:color/white"
@@ -50,35 +51,37 @@
             app:met_primaryColor="@android:color/white"
             app:met_singleLineEllipsis="true"/>
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:weightSum="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <info.hoang8f.widget.FButton
+                android:id="@+id/btnConnect"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="30dp"
+                android:text="Connect"
+                app:fButtonColor="@color/colorAccent"
+                android:textColor="@android:color/white"
+                android:shadowColor="@android:color/black"
+                app:shadowEnabled="true"
+                app:cornerRadius="5dp"
+
+                />
+
+
+
+
+        </LinearLayout>
+
     </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:weightSum="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-
-
-        <info.hoang8f.widget.FButton
-            android:id="@+id/btnConnect"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="30dp"
-            android:text="Connect"
-            app:fButtonColor="@color/colorAccent"
-            android:textColor="@android:color/white"
-            android:shadowColor="@android:color/black"
-            app:shadowEnabled="true"
-            app:cornerRadius="5dp"
-
-            />
-
-
-
-
-    </LinearLayout>
     
     
 
