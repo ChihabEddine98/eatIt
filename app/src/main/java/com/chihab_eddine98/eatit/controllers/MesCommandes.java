@@ -52,10 +52,15 @@ public class MesCommandes extends AppCompatActivity {
 
         // show mes commandes
 
-        if(getIntent()==null)
-            loadMesCommandes(Common.currentUser.getPhone());
-        else
-            loadMesCommandes(getIntent().getStringExtra("userPhone"));
+        loadMesCommandes(Common.currentUser.getPhone());
+
+
+//        if(getIntent()==null) {
+//            loadMesCommandes(Common.currentUser.getPhone());
+//        }
+//        else {
+//            loadMesCommandes(getIntent().getStringExtra("userPhone"));
+//        }
 
     }
 

@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
 import com.chihab_eddine98.eatit.R;
+import com.chihab_eddine98.eatit.common.Common;
 import com.chihab_eddine98.eatit.controllers.MesCommandes;
 import com.chihab_eddine98.eatit.model.Order;
 import com.google.firebase.database.ChildEventListener;
@@ -60,8 +61,9 @@ public class ListenOrder extends Service implements ChildEventListener {
 
         // Update in order
         Order order=dataSnapshot.getValue(Order.class);
-        showNotification(dataSnapshot.getKey(),order);
-
+        if(Common.currentUser.getPhone().equals(order.getPhone())) {
+            showNotification(dataSnapshot.getKey(), order);
+        }
     }
 
     private void showNotification(String key, Order order) {
