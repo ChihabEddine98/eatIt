@@ -11,17 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MesCommandes"></activity>
-        <activity android:name=".Cart" />
-        <activity android:name=".FoodDetail" />
-        <activity android:name=".FoodList" />
+        <service
+            android:name=".services.ListenOrder"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity android:name=".controllers.MesCommandes" />
+        <activity android:name=".controllers.Cart" />
+        <activity android:name=".controllers.FoodDetail" />
+        <activity android:name=".controllers.FoodList" />
         <activity
-            android:name=".Home"
+            android:name=".controllers.Home"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".controllers.RegisterActivity" />
+        <activity android:name=".controllers.LoginActivity" />
+        <activity android:name=".controllers.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

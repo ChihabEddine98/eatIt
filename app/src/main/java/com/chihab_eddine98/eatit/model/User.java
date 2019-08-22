@@ -11,6 +11,7 @@ public class User
     private String mdp;
     // Ajouté pour le besoin
     private String phone;
+    private String isStuff;
 
 
 
@@ -19,9 +20,18 @@ public class User
         this.prenom = prenom;
         this.dateDeNaissance = dateDeNaissance;
         this.mdp = mdp;
+        this.isStuff="false";
     }
 
     public User() {
+    }
+
+    public String getIsStuff() {
+        return isStuff;
+    }
+
+    public void setIsStuff(String isStuff) {
+        this.isStuff = isStuff;
     }
 
     public String getMdp() {

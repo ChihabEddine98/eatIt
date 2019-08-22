@@ -1,4 +1,4 @@
-package com.chihab_eddine98.eatit;
+package com.chihab_eddine98.eatit.controllers;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
-import com.chihab_eddine98.eatit.Database.Database;
+import com.chihab_eddine98.eatit.R;
+import com.chihab_eddine98.eatit.database.Database;
 import com.chihab_eddine98.eatit.model.Food;
 import com.chihab_eddine98.eatit.model.FoodOrder;
 import com.google.android.material.appbar.CollapsingToolbarLayout;

@@ -1,4 +1,4 @@
-package com.chihab_eddine98.eatit;
+package com.chihab_eddine98.eatit.controllers;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,13 +10,12 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.Toast;
 
+import com.chihab_eddine98.eatit.R;
 import com.chihab_eddine98.eatit.interfaces.ItemClickListener;
 import com.chihab_eddine98.eatit.model.Food;
 import com.chihab_eddine98.eatit.viewHolder.FoodVH;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

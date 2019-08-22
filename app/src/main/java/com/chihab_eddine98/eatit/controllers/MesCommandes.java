@@ -1,4 +1,4 @@
-package com.chihab_eddine98.eatit;
+package com.chihab_eddine98.eatit.controllers;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.chihab_eddine98.eatit.R;
 import com.chihab_eddine98.eatit.common.Common;
 import com.chihab_eddine98.eatit.model.Order;
 import com.chihab_eddine98.eatit.viewHolder.OrderVH;
@@ -51,8 +52,10 @@ public class MesCommandes extends AppCompatActivity {
 
         // show mes commandes
 
-        loadMesCommandes(Common.currentUser.getPhone());
-
+        if(getIntent()==null)
+            loadMesCommandes(Common.currentUser.getPhone());
+        else
+            loadMesCommandes(getIntent().getStringExtra("userPhone"));
 
     }
 

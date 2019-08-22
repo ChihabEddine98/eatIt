@@ -1,4 +1,4 @@
-package com.chihab_eddine98.eatit;
+package com.chihab_eddine98.eatit.controllers;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.chihab_eddine98.eatit.R;
 import com.chihab_eddine98.eatit.common.Common;
 import com.chihab_eddine98.eatit.model.User;
 import com.google.firebase.database.DataSnapshot;

@@ -1,4 +1,4 @@
-package com.chihab_eddine98.eatit;
+package com.chihab_eddine98.eatit.controllers;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.chihab_eddine98.eatit.Database.Database;
+import com.chihab_eddine98.eatit.R;
+import com.chihab_eddine98.eatit.database.Database;
 import com.chihab_eddine98.eatit.common.Common;
 import com.chihab_eddine98.eatit.model.FoodOrder;
 import com.chihab_eddine98.eatit.model.Order;

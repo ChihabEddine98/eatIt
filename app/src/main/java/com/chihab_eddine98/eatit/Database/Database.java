@@ -1,4 +1,4 @@
-package com.chihab_eddine98.eatit.Database;
+package com.chihab_eddine98.eatit.database;
 
 import android.content.Context;
 import android.database.Cursor;

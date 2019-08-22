@@ -1,15 +1,16 @@
-package com.chihab_eddine98.eatit;
+package com.chihab_eddine98.eatit.controllers;
 
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.chihab_eddine98.eatit.R;
 import com.chihab_eddine98.eatit.common.Common;
 import com.chihab_eddine98.eatit.interfaces.ItemClickListener;
 import com.chihab_eddine98.eatit.model.Category;
+import com.chihab_eddine98.eatit.services.ListenOrder;
 import com.chihab_eddine98.eatit.viewHolder.CategoryVH;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import android.view.View;
 
@@ -99,6 +100,11 @@ public class Home extends AppCompatActivity
         loadCategories();
 
 
+        // Start Services
+
+        Intent listenOrderService=new Intent(Home.this,ListenOrder.class);
+
+        startService(listenOrderService);
 
 
     }
