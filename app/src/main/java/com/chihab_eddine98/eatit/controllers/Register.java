@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.chihab_eddine98.eatit.R;
+import com.chihab_eddine98.eatit.common.Common;
 import com.chihab_eddine98.eatit.model.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
-public class RegisterActivity extends AppCompatActivity {
+public class Register extends AppCompatActivity {
 
 
 
@@ -49,32 +50,42 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                table_user.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (Common.isConnectedToNet(getBaseContext()))
+                {
+                    table_user.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                        if(!dataSnapshot.child(edt_phone.getText().toString()).exists())
-                        {
-                            User user=new User(edt_nom.getText().toString(),edt_prenom.getText().toString(),
-                                               "12/09/1998",edt_mdp.getText().toString());
+                            if(!dataSnapshot.child(edt_phone.getText().toString()).exists())
+                            {
+                                User user=new User(edt_nom.getText().toString(),edt_prenom.getText().toString(),
+                                        "12/09/1998",edt_mdp.getText().toString());
 
-                            table_user.child(edt_phone.getText().toString()).setValue(user);
-                            Toast.makeText(RegisterActivity.this," Account Created Succesfully !",Toast.LENGTH_SHORT).show();
+                                table_user.child(edt_phone.getText().toString()).setValue(user);
+                                Toast.makeText(Register.this," Account Created Succesfully !",Toast.LENGTH_SHORT).show();
 
+
+                            }
+                            else
+                            {
+                                Toast.makeText(Register.this," Try to connect this account already exists.",Toast.LENGTH_SHORT).show();
+                                return;
+                            }
 
                         }
-                        else
-                        {
-                            Toast.makeText(RegisterActivity.this," Try to connect this account already exists.",Toast.LENGTH_SHORT).show();
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
                         }
+                    });
+                }
+                else
+                {
+                    Toast.makeText(Register.this," Check your connection !",Toast.LENGTH_SHORT).show();
 
-                    }
+                }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
 
             }
         });

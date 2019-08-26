@@ -10,8 +10,10 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Toast;
 
 import com.chihab_eddine98.eatit.R;
+import com.chihab_eddine98.eatit.common.Common;
 import com.chihab_eddine98.eatit.interfaces.ItemClickListener;
 import com.chihab_eddine98.eatit.model.Food;
 import com.chihab_eddine98.eatit.viewHolder.FoodVH;
@@ -75,7 +77,15 @@ public class FoodList extends AppCompatActivity {
         }
         if(!categoryId.isEmpty() && categoryId!=null)
         {
-            loadListFood(categoryId);
+            if (Common.isConnectedToNet(getBaseContext()))
+            {
+                loadListFood(categoryId);
+            }
+            else
+            {
+                Toast.makeText(FoodList.this," Check your connection !",Toast.LENGTH_SHORT).show();
+                return;
+            }
         }
 
         //Search

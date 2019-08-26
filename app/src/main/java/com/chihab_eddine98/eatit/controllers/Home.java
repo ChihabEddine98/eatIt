@@ -33,6 +33,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -97,7 +98,17 @@ public class Home extends AppCompatActivity
         recycler_category.setLayoutManager(layoutManager);
 
 
-        loadCategories();
+        if (Common.isConnectedToNet(this))
+        {
+            loadCategories();
+        }
+        else
+        {
+            Toast.makeText(this," Check your connection !",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
 
 
         // Start Services
@@ -193,7 +204,7 @@ public class Home extends AppCompatActivity
 
         } else if (id == R.id.nav_logout) {
 
-            Intent loginIntent=new Intent(Home.this,LoginActivity.class);
+            Intent loginIntent=new Intent(Home.this, Login.class);
 
             loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(loginIntent);

@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.chihab_eddine98.eatit.R;
+import com.chihab_eddine98.eatit.common.Common;
 import com.chihab_eddine98.eatit.database.Database;
 import com.chihab_eddine98.eatit.model.Food;
 import com.chihab_eddine98.eatit.model.FoodOrder;
@@ -87,7 +88,15 @@ public class FoodDetail extends AppCompatActivity {
         }
         if(!foodId.isEmpty())
         {
-            getFoodDetail(foodId);
+            if (Common.isConnectedToNet(getBaseContext()))
+            {
+                getFoodDetail(foodId);
+            }
+            else
+            {
+                Toast.makeText(FoodDetail.this," Check your connection !",Toast.LENGTH_SHORT).show();
+                return;
+            }
         }
 
 

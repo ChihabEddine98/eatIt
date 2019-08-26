@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent login=new Intent(MainActivity.this,LoginActivity.class);
+                Intent login=new Intent(MainActivity.this, Login.class);
                 startActivity(login);
 
             }
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent register=new Intent(MainActivity.this,RegisterActivity.class);
+                Intent register=new Intent(MainActivity.this, Register.class);
                 startActivity(register);
 
             }

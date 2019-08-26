@@ -2,6 +2,7 @@ package com.chihab_eddine98.eatit.viewHolder;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.chihab_eddine98.eatit.R;
+import com.chihab_eddine98.eatit.common.Common;
 import com.chihab_eddine98.eatit.interfaces.ItemClickListener;
 import com.chihab_eddine98.eatit.model.FoodOrder;
 
@@ -21,7 +23,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
- class CartVH extends RecyclerView.ViewHolder implements View.OnClickListener {
+ class CartVH extends RecyclerView.ViewHolder
+         implements View.OnClickListener,
+         View.OnCreateContextMenuListener {
 
 
 
@@ -37,6 +41,8 @@ import java.util.Locale;
         cart_item_prix=itemView.findViewById(R.id.cart_item_prix);
         cart_item_qte=itemView.findViewById(R.id.cart_item_qte);
 
+        itemView.setOnCreateContextMenuListener(this);
+
     }
 
     @Override
@@ -49,7 +55,13 @@ import java.util.Locale;
     public void setItemClickListener(ItemClickListener itemClickListener) {
         this.itemClickListener = itemClickListener;
     }
-}
+
+     @Override
+     public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo)
+     {
+        contextMenu.add(0,0,getAdapterPosition(), Common.DELETE);
+     }
+ }
 
 
 public class CartAdapter extends RecyclerView.Adapter<CartVH>

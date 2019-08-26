@@ -1,5 +1,6 @@
 package com.chihab_eddine98.eatit.controllers;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 import com.chihab_eddine98.eatit.R;
 import com.chihab_eddine98.eatit.database.Database;
 import com.chihab_eddine98.eatit.common.Common;
+import com.chihab_eddine98.eatit.model.Food;
 import com.chihab_eddine98.eatit.model.FoodOrder;
 import com.chihab_eddine98.eatit.model.Order;
 import com.chihab_eddine98.eatit.viewHolder.CartAdapter;
@@ -77,7 +80,15 @@ public class Cart extends AppCompatActivity {
         btnPlaceOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                afficheAdresseAlert(getBaseContext(),"Plus qu'une étape !","Entrez Votre Adresse",R.drawable.ic_shopping_cart_black_24dp);
+
+                if (cart.size()>0)
+                {
+                    afficheAdresseAlert(getBaseContext(),"Plus qu'une étape !","Entrez Votre Adresse",R.drawable.ic_shopping_cart_black_24dp);
+                }
+                else
+                {
+                    Toast.makeText(getBaseContext()," Votre Panier est vide !",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -154,6 +165,7 @@ public class Cart extends AppCompatActivity {
         cart=new Database(getBaseContext()).getCart();
         adapter=new CartAdapter(cart,this);
 
+        adapter.notifyDataSetChanged();
         recycler_cart.setAdapter(adapter);
 
        total=0.0;
@@ -168,6 +180,31 @@ public class Cart extends AppCompatActivity {
         NumberFormat fmt=NumberFormat.getCurrencyInstance(locale);
 
         txtTotal.setText(fmt.format(total));
+
+
+    }
+
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        if (item.getTitle().equals(Common.DELETE))
+        {
+            deleteFromCart(item.getOrder());
+        }
+        return true;
+    }
+
+    private void deleteFromCart(int position) {
+
+        cart.remove(position);
+
+        new Database(this).cleanCart();
+
+        for (FoodOrder item:cart)
+        {
+            new Database(this).addToCart(item);
+        }
+        loadCart();
 
 
     }
