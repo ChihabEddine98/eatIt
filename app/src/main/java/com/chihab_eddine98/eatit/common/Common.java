@@ -10,6 +10,9 @@ public class Common {
 
     // Constantes Globales
     public static final String DELETE="Supprimer";
+    public static final String USR_KEY="userPhone";
+    public static final String USR_Pass="mdp";
+
 
     public static User currentUser;
 

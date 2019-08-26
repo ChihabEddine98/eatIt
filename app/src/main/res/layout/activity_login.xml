@@ -16,16 +16,10 @@
         android:layout_height="match_parent"
         android:gravity="center">
 
-        <LinearLayout
-            android:layout_marginTop="-40dp"
-            android:layout_marginLeft="-10dp"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:background="@color/colorAccent"
-            android:rotation="-20">
 
-        </LinearLayout>
         <ImageView
+            android:layout_marginTop="-120dp"
+            android:layout_marginBottom="40dp"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:src="@drawable/logo_eat_it"
@@ -35,8 +29,10 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/noirClair"
-            android:layout_margin="20dp"
+            android:background="@color/overlayBg"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
             >
 
 
@@ -44,7 +40,7 @@
                 android:id="@+id/edt_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Phone Number"
+                android:hint="Phone"
                 app:met_textColorHint="@color/bg_color_gris_clair"
                 app:met_textColor="@color/white"
                 app:met_underlineColor="@color/white"
@@ -52,7 +48,9 @@
                 android:textSize="30sp"
                 android:text="0771469171"
                 android:inputType="phone"
-                android:layout_margin="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
                 app:met_baseColor="@android:color/white"
                 app:met_floatingLabel="highlight"
                 app:met_maxCharacters="10"
@@ -64,7 +62,8 @@
                 android:id="@+id/edt_mdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
                 android:hint="Password"
                 android:text="123"
                 android:inputType="textPassword"
@@ -78,6 +77,42 @@
                 app:met_maxCharacters="25"
                 app:met_primaryColor="@android:color/white"
                 app:met_singleLineEllipsis="true"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.rey.material.widget.CheckBox
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/rememberMe"
+                    android:layout_marginLeft="22dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    style="@style/Material.Drawable.CheckBox"
+                    android:text="Se souvenir de moi"
+                    android:textColor="@color/white"
+                    android:background="@android:color/transparent"
+                    app:cbd_strokeColor="@android:color/white"
+                    android:gravity="center_vertical"
+                    app:cbd_tickColor="@android:color/black"
+                    />
+
+                <com.rey.material.widget.Button
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="Mot de passe oublié ?"
+                    android:textColor="@android:color/white"
+                    android:gravity="center_vertical"/>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -95,8 +130,8 @@
                     android:layout_weight="1"
                     android:layout_margin="30dp"
                     android:text="Connect"
-                    app:fButtonColor="@color/overlayBg"
-                    android:textColor="@android:color/white"
+                    app:fButtonColor="@color/colorAccent"
+                    android:textColor="@android:color/black"
                     android:shadowColor="@android:color/black"
                     app:shadowEnabled="true"
                     app:cornerRadius="10dp"

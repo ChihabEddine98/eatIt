@@ -19,12 +19,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
+import com.rey.material.widget.CheckBox;
+
+import io.paperdb.Paper;
 
 public class Login extends AppCompatActivity {
 
 
     EditText edt_phone,edt_mdp;
     Button btnConnect;
+    CheckBox rememberMe;
 
 
 
@@ -35,6 +39,7 @@ public class Login extends AppCompatActivity {
 
         edt_phone=(MaterialEditText)findViewById(R.id.edt_phone);
         edt_mdp=(MaterialEditText)findViewById(R.id.edt_mdp);
+        rememberMe=findViewById(R.id.rememberMe);
 
         btnConnect=findViewById(R.id.btnConnect);
 
@@ -42,6 +47,7 @@ public class Login extends AppCompatActivity {
         FirebaseDatabase bdd=FirebaseDatabase.getInstance();
         final DatabaseReference table_user=bdd.getReference("User");
 
+        Paper.init(this);
 
         btnConnect.setOnClickListener(new View.OnClickListener() {
 
@@ -51,6 +57,12 @@ public class Login extends AppCompatActivity {
 
                     if(Common.isConnectedToNet(getBaseContext()))
                     {
+                        if (rememberMe.isChecked())
+                        {
+                            Paper.book().write(Common.USR_KEY,edt_phone.getText().toString());
+                            Paper.book().write(Common.USR_Pass,edt_mdp.getText().toString());
+                        }
+
                         table_user.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -65,6 +77,7 @@ public class Login extends AppCompatActivity {
                                         Intent homeActivity=new Intent(Login.this,Home.class);
                                         Common.currentUser=user;
                                         startActivity(homeActivity);
+                                        finish();
 
                                     }
                                     else

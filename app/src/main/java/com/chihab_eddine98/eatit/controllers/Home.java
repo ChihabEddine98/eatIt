@@ -35,6 +35,8 @@ import android.view.Menu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import io.paperdb.Paper;
+
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -100,6 +102,7 @@ public class Home extends AppCompatActivity
 
         if (Common.isConnectedToNet(this))
         {
+            Paper.init(this);
             loadCategories();
         }
         else
@@ -203,6 +206,10 @@ public class Home extends AppCompatActivity
         } else if (id == R.id.nav_settings) {
 
         } else if (id == R.id.nav_logout) {
+
+
+            // Supprimmer le Remember Me
+            Paper.book().destroy();
 
             Intent loginIntent=new Intent(Home.this, Login.class);
 
