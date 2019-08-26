@@ -14,7 +14,7 @@ public class FoodVH extends RecyclerView.ViewHolder implements View.OnClickListe
 
 
     public TextView food_nom;
-    public ImageView food_img;
+    public ImageView food_img,fav_img;
     private ItemClickListener itemClickListener;
 
     public FoodVH(@NonNull View itemView) {
@@ -22,6 +22,7 @@ public class FoodVH extends RecyclerView.ViewHolder implements View.OnClickListe
 
         food_nom=(TextView)  itemView.findViewById(R.id.food_nom);
         food_img=(ImageView) itemView.findViewById(R.id.food_img);
+        fav_img=(ImageView) itemView.findViewById(R.id.fav_img);
 
         itemView.setOnClickListener(this);
 

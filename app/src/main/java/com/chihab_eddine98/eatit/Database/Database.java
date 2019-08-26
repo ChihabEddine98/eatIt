@@ -75,4 +75,35 @@ public class Database extends SQLiteAssetHelper {
         db.execSQL(query);
 
     }
+
+    // Favoris
+
+    // Ajouter un plat aux favoris
+    public void addToFavoris(String foodId)
+    {
+        SQLiteDatabase db=getReadableDatabase();
+        String query=String.format("INSERT INTO Favorites(foodId) VALUES('%s');",foodId);
+        db.execSQL(query);
+    }
+    // Supprimer un food from favoris
+    public void removeFromFavoris(String foodId)
+    {
+        SQLiteDatabase db=getReadableDatabase();
+        String query=String.format("DELETE FROM Favorites WHERE foodId='%s';",foodId);
+        db.execSQL(query);
+    }
+    // Est ce plat dans les favoris ?
+    public boolean isFavoris(String foodId)
+    {
+        boolean dansFav;
+
+        SQLiteDatabase db=getReadableDatabase();
+        String query=String.format("SELECT * FROM Favorites WHERE foodId='%s';",foodId);
+        Cursor cursor=db.rawQuery(query,null);
+
+        dansFav=cursor.getCount()>0;
+        cursor.close();
+        return dansFav;
+    }
+
 }

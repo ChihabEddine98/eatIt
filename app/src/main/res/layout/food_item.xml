@@ -19,17 +19,35 @@
             android:layout_height="match_parent"
             android:src="@drawable/bg_food"/>
 
-        <TextView
-            android:id="@+id/food_nom"
-            android:textColor="@android:color/white"
-            android:textSize="28sp"
-            android:text="Nom De Plat"
-            android:background="@color/noirClair"
-            android:gravity="center"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            />
+            android:background="@color/noirClair"
+            android:weightSum="10"
+
+            >
+
+            <TextView
+                android:id="@+id/food_nom"
+                android:textColor="@color/bg_color_gris_clair"
+                android:textSize="28sp"
+                android:text="Nom Du Plat"
+                android:gravity="center"
+                android:layout_weight="8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                />
+            <ImageView
+                android:src="@drawable/ic_favorite_border_black_24dp"
+                android:id="@+id/fav_img"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
 
 
     </RelativeLayout>
