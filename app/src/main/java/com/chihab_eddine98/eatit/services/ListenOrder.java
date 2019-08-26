@@ -89,7 +89,7 @@ public class ListenOrder extends Service implements ChildEventListener {
                .setContentInfo(" Des nouvelles informations disponibles sur votre commande !")
                .setContentText("Commande #"+key+" a était modifiée rentrez pour en savoir plus")
                .setContentIntent(contentIntent)
-               .setSmallIcon(R.mipmap.ic_launcher_round);
+               .setSmallIcon(R.mipmap.ic_launcher);
 
 
         NotificationManager notificationManager=(NotificationManager) getBaseContext().getSystemService(Context.NOTIFICATION_SERVICE);
