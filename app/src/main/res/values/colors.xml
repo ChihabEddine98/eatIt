@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#1ECEB0</color>
+    <color name="colorPrimary">#00BFA5</color>
     <color name="colorGrey">#2A2124</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#BE1FDD66</color>
+    <color name="colorAccent">#3751D9</color>
     <color name="noirClair">#B71E1617</color>
     <color name="overlayBg">#5C3D3238</color>
     <!--<color name="overlayBg">#80494044</color>-->

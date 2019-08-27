@@ -131,7 +131,7 @@
                     android:layout_margin="30dp"
                     android:text="Connect"
                     app:fButtonColor="@color/colorAccent"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:shadowColor="@android:color/black"
                     app:shadowEnabled="true"
                     app:cornerRadius="10dp"

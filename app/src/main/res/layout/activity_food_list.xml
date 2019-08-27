@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        app:mt_speechMode="true"
+        app:mt_speechMode="false"
         app:mt_hint="Entrez Le nom de votre plat !"
         android:layout_margin="0dp"
         android:padding="0dp"

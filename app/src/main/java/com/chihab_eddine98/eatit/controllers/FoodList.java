@@ -264,6 +264,7 @@ public class FoodList extends AppCompatActivity {
                         foodDetailActivity.putExtra("foodId",adapter.getRef(position).getKey());
 
                         startActivity(foodDetailActivity);
+                        finish();
                     }
                 });
 
